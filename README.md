@@ -44,13 +44,24 @@ Built using ZenML, the pipeline includes:
 
 Loan-Amount-Prediction-System/
 ├── data/
-│ └── train.csv
-├── steps/
+│   └── train.csv                       # Training dataset
+│
 ├── pipelines/
-├── streamlit_app.py # Streamlit interface
-├── run_deployment.py # Run pipeline CLI
-├── deployment_pipeline.py
-└── README.md
+│   └── deployment_pipeline.py         # Full training and deployment pipeline (ZenML)
+│
+├── steps/                              # ZenML pipeline steps
+│   ├── ingest_data.py
+│   ├── clean_data.py
+│   ├── model_train.py
+│   ├── evaluation.py
+│   └── config.py
+│
+├── streamlit_app.py                   # Streamlit UI for live predictions
+├── run_deployment.py                 # CLI entry point to run ZenML pipeline
+├── start_app.bat                     # One-click startup for MLflow server and Streamlit (Windows)
+├── requirements.txt                  # Python dependencies
+├── .gitignore                        # Excluded files for clean version control
+└── README.md                         # Project documentation
 
 
 ---
